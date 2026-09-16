@@ -41,19 +41,23 @@ npm run install:drivers
 
 ### 4. Configure environment variables
 
-Create a `.env` file in the project root:
-
-```env
-DIGITAL_AI_BASE_URL=https://uscloud.experitest.com
-DIGITAL_AI_ACCESS_KEY=aut_1_7VlLbC7d4CmAvt9MQ4VND1-R4dfSw4WgrXVo5fsWrpk=
-```
-
-Or export them in your shell:
+Create a `.env` file in the project root (copy from `.env.example`):
 
 ```bash
-export DIGITAL_AI_BASE_URL=https://uscloud.experitest.com
-export DIGITAL_AI_ACCESS_KEY=aut_1_7VlLbC7d4CmAvt9MQ4VND1-R4dfSw4WgrXVo5fsWrpk=
+cp .env.example .env
 ```
+
+Then edit `.env` and add your Digital.ai credentials:
+
+```env
+DIGITAL_AI_BASE_URL=https://your-tenant.experitest.com
+DIGITAL_AI_ACCESS_KEY=your-access-key-here
+```
+
+**Get your credentials:**
+1. Log in to Digital.ai Testing portal
+2. Click your name/avatar → Access Key
+3. Copy your key and paste into `.env`
 
 ## Running Tests
 
@@ -99,6 +103,7 @@ dai-bank-test-automation/
 ├── dai-bank-login-test.js       # Main test file
 ├── README.md                     # This file
 ├── .gitignore                    # Git ignore rules
+├── .env.example                  # Environment variables template
 └── node_modules/                # Dependencies (created after npm install)
 ```
 
@@ -116,6 +121,8 @@ Configuration for running tests against a local Appium server.
 |----------|----------|-------------|
 | `DIGITAL_AI_BASE_URL` | Yes | Your Digital.ai tenant URL |
 | `DIGITAL_AI_ACCESS_KEY` | Yes | Your Digital.ai access key |
+
+**Never commit your `.env` file to git!** It's already in `.gitignore`.
 
 ## Test Details
 
